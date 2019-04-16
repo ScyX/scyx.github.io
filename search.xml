@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[2019.3.18腾讯一面]]></title>
+    <title><![CDATA[2019.3.18腾讯暑期实习招聘提前批一面(挂)]]></title>
     <url>%2F2019%2F04%2F16%2F2019-3-18%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2%2F</url>
-    <content type="text"><![CDATA[3.18晚上9点1.]]></content>
+    <content type="text"><![CDATA[3.18晚上9点 人生第一次面试 了解redis高可用吗 异步队列怎么做的? redis和数据库的关系,是先写redis还是数据库 redis崩溃了如何减轻数据库的压力 用过什么redis命令 操作系统相关 select epoll 进程线程区别 进程通信方式 操作系统有哪些锁 TCP三次握手 粘包问题 如何访问到链表的中间节点暂时记得的只有这么多了 关于操作系统和场景题答的不好 给自己敲了警钟 在学习的时候一定要结合自己的思考 不然只是停留在表面]]></content>
       <tags>
         <tag>面试</tag>
       </tags>
