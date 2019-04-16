@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="什么是插入排序插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。这里只是要把牌看成数组。初始时要把数组的第一个元素看成有序列表，从第二个数开始，依次将当前数插入到前面的有序列表中。12345678910111213141516public static void main(String[] args)&amp;#123;        int[] ar">
+<meta name="description" content="什么是插入排序插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。这里只是要把牌看成数组。">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java排序算法之插入排序">
 <meta property="og:url" content="https://scyx.github.io/2019/04/16/Java排序算法之插入排序/index.html">
 <meta property="og:site_name" content="Cyx的博客">
-<meta property="og:description" content="什么是插入排序插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。这里只是要把牌看成数组。初始时要把数组的第一个元素看成有序列表，从第二个数开始，依次将当前数插入到前面的有序列表中。12345678910111213141516public static void main(String[] args)&amp;#123;        int[] ar">
+<meta property="og:description" content="什么是插入排序插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。这里只是要把牌看成数组。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-16T02:48:22.335Z">
+<meta property="og:updated_time" content="2019-04-16T02:51:06.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java排序算法之插入排序">
-<meta name="twitter:description" content="什么是插入排序插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。这里只是要把牌看成数组。初始时要把数组的第一个元素看成有序列表，从第二个数开始，依次将当前数插入到前面的有序列表中。12345678910111213141516public static void main(String[] args)&amp;#123;        int[] ar">
+<meta name="twitter:description" content="什么是插入排序插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。这里只是要把牌看成数组。">
 
 
 
@@ -405,7 +405,7 @@
       
 
       
-        <h2 id="什么是插入排序"><a href="#什么是插入排序" class="headerlink" title="什么是插入排序"></a>什么是插入排序</h2><p>插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。<br>这里只是要把牌看成数组。<br><br>初始时要把数组的第一个元素看成有序列表，从第二个数开始，依次将当前数插入到前面的有序列表中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr=&#123;5,4,3,2,1&#125;;</span><br><span class="line">        for(int i=1;i&lt;arr.length;i++)&#123; //第一次把第一个元素也就是数组的0位置上的数看成有序，所以从1位置也就是数组的第二个数开始</span><br><span class="line">            int temp=arr[i]; //当前数</span><br><span class="line">            int left=i-1; //把当前数的前面的所有数都看成有序列表</span><br><span class="line">            while(left&gt;=0&amp;&amp;temp&lt;arr[left])&#123; //依次和前面的数比较，如果当前数比前面的数小</span><br><span class="line">                                            就把前面的数后移一位，继续向前比，直到不比前面的数小为止</span><br><span class="line">                arr[left+1]=arr[left];</span><br><span class="line">                left--;</span><br><span class="line">            &#125;</span><br><span class="line">            arr[left+1]=temp; //把当前数插入，因为之前的元素都向后移了，总会有一个空的位置，这个位置就是这个数应该插入在有序列表中的位置</span><br><span class="line">        &#125;</span><br><span class="line">        for(int a:arr)&#123;</span><br><span class="line">            System.out.println(a);//由于此处采用的是从小到大排，所以结果应该为1,2,3,4,5</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="什么是插入排序"><a href="#什么是插入排序" class="headerlink" title="什么是插入排序"></a>什么是插入排序</h2><p>插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。<br>这里只是要把牌看成数组。<a id="more"></a><br>初始时要把数组的第一个元素看成有序列表，从第二个数开始，依次将当前数插入到前面的有序列表中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr=&#123;5,4,3,2,1&#125;;</span><br><span class="line">        for(int i=1;i&lt;arr.length;i++)&#123; //第一次把第一个元素也就是数组的0位置上的数看成有序，所以从1位置也就是数组的第二个数开始</span><br><span class="line">            int temp=arr[i]; //当前数</span><br><span class="line">            int left=i-1; //把当前数的前面的所有数都看成有序列表</span><br><span class="line">            while(left&gt;=0&amp;&amp;temp&lt;arr[left])&#123; //依次和前面的数比较，如果当前数比前面的数小</span><br><span class="line">                                            就把前面的数后移一位，继续向前比，直到不比前面的数小为止</span><br><span class="line">                arr[left+1]=arr[left];</span><br><span class="line">                left--;</span><br><span class="line">            &#125;</span><br><span class="line">            arr[left+1]=temp; //把当前数插入，因为之前的元素都向后移了，总会有一个空的位置，这个位置就是这个数应该插入在有序列表中的位置</span><br><span class="line">        &#125;</span><br><span class="line">        for(int a:arr)&#123;</span><br><span class="line">            System.out.println(a);//由于此处采用的是从小到大排，所以结果应该为1,2,3,4,5</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
