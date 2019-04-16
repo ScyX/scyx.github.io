@@ -30,16 +30,4 @@
         <tag>Java</tag>
       </tags>
   </entry>
-  <entry>
-    <title><![CDATA[Hexo博客新建文章并发布]]></title>
-    <url>%2F2019%2F04%2F14%2Farticle%2F</url>
-    <content type="text"><![CDATA[跟着网上搭建的个人博客 记录一下这是加粗这是斜体]]></content>
-      <categories>
-        <category>搭建博客</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
 </search>
