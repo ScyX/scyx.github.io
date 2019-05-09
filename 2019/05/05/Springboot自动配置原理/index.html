@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Java,">
+  <meta name="keywords" content="-Java,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="什么是插入排序插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。这里只是要把牌看成数组。">
-<meta name="keywords" content="Java">
+<meta name="description" content="##1234567891011121314151617181920212223242526272829303132333435363738@Target(&amp;#123;ElementType.TYPE&amp;#125;)@Retention(RetentionPolicy.RUNTIME)@Documented@Inherited@SpringBootConfiguration@EnableAutoCon">
+<meta name="keywords" content="-Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java排序算法之插入排序">
-<meta property="og:url" content="https://scyx.github.io/2019/04/16/Java排序算法之插入排序/index.html">
+<meta property="og:title" content="Springboot自动配置原理">
+<meta property="og:url" content="https://scyx.github.io/2019/05/05/Springboot自动配置原理/index.html">
 <meta property="og:site_name" content="Cyx&#39;s blog">
-<meta property="og:description" content="什么是插入排序插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。这里只是要把牌看成数组。">
+<meta property="og:description" content="##1234567891011121314151617181920212223242526272829303132333435363738@Target(&amp;#123;ElementType.TYPE&amp;#125;)@Retention(RetentionPolicy.RUNTIME)@Documented@Inherited@SpringBootConfiguration@EnableAutoCon">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-16T02:51:06.136Z">
+<meta property="og:updated_time" content="2019-05-09T05:44:45.180Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java排序算法之插入排序">
-<meta name="twitter:description" content="什么是插入排序插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。这里只是要把牌看成数组。">
+<meta name="twitter:title" content="Springboot自动配置原理">
+<meta name="twitter:description" content="##1234567891011121314151617181920212223242526272829303132333435363738@Target(&amp;#123;ElementType.TYPE&amp;#125;)@Retention(RetentionPolicy.RUNTIME)@Documented@Inherited@SpringBootConfiguration@EnableAutoCon">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://scyx.github.io/2019/04/16/Java排序算法之插入排序/">
+  <link rel="canonical" href="https://scyx.github.io/2019/05/05/Springboot自动配置原理/">
 
 
 
 
 
-  <title>Java排序算法之插入排序 | Cyx's blog</title>
+  <title>Springboot自动配置原理 | Cyx's blog</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://scyx.github.io/2019/04/16/Java排序算法之插入排序/">
+    <link itemprop="mainEntityOfPage" href="https://scyx.github.io/2019/05/05/Springboot自动配置原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="cyx">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java排序算法之插入排序</h1>
+          <h1 class="post-title" itemprop="name headline">Springboot自动配置原理</h1>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-16T10:21:02+08:00">
-                2019-04-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T20:06:03+08:00">
+                2019-05-05
               </time>
             
 
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  362字
+                  86字
                 </span>
               
 
@@ -405,7 +405,8 @@
       
 
       
-        <h2 id="什么是插入排序"><a href="#什么是插入排序" class="headerlink" title="什么是插入排序"></a>什么是插入排序</h2><p>插入排序的基本思想就是把一个数插入到已经有序的数列中，形式就像平时打牌一样，要把一张牌插到已经有的牌中。<br>这里只是要把牌看成数组。<a id="more"></a><br>初始时要把数组的第一个元素看成有序列表，从第二个数开始，依次将当前数插入到前面的有序列表中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr=&#123;5,4,3,2,1&#125;;</span><br><span class="line">        for(int i=1;i&lt;arr.length;i++)&#123; //第一次把第一个元素也就是数组的0位置上的数看成有序，所以从1位置也就是数组的第二个数开始</span><br><span class="line">            int temp=arr[i]; //当前数</span><br><span class="line">            int left=i-1; //把当前数的前面的所有数都看成有序列表</span><br><span class="line">            while(left&gt;=0&amp;&amp;temp&lt;arr[left])&#123; //依次和前面的数比较，如果当前数比前面的数小</span><br><span class="line">                                            就把前面的数后移一位，继续向前比，直到不比前面的数小为止</span><br><span class="line">                arr[left+1]=arr[left];</span><br><span class="line">                left--;</span><br><span class="line">            &#125;</span><br><span class="line">            arr[left+1]=temp; //把当前数插入，因为之前的元素都向后移了，总会有一个空的位置，这个位置就是这个数应该插入在有序列表中的位置</span><br><span class="line">        &#125;</span><br><span class="line">        for(int a:arr)&#123;</span><br><span class="line">            System.out.println(a);//由于此处采用的是从小到大排，所以结果应该为1,2,3,4,5</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+        <p>##<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(&#123;ElementType.TYPE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@SpringBootConfiguration</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(</span><br><span class="line">    excludeFilters = &#123;<span class="meta">@Filter</span>(</span><br><span class="line">    type = FilterType.CUSTOM,</span><br><span class="line">    classes = &#123;TypeExcludeFilter.class&#125;</span><br><span class="line">), <span class="meta">@Filter</span>(</span><br><span class="line">    type = FilterType.CUSTOM,</span><br><span class="line">    classes = &#123;AutoConfigurationExcludeFilter.class&#125;</span><br><span class="line">)&#125;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SpringBootApplication &#123;</span><br><span class="line">    <span class="meta">@AliasFor</span>(</span><br><span class="line">        annotation = EnableAutoConfiguration.class</span><br><span class="line">    )</span><br><span class="line">    Class&lt;?&gt;[] exclude() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AliasFor</span>(</span><br><span class="line">        annotation = EnableAutoConfiguration.class</span><br><span class="line">    )</span><br><span class="line">    String[] excludeName() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AliasFor</span>(</span><br><span class="line">        annotation = ComponentScan.class,</span><br><span class="line">        attribute = <span class="string">"basePackages"</span></span><br><span class="line">    )</span><br><span class="line">    String[] scanBasePackages() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AliasFor</span>(</span><br><span class="line">        annotation = ComponentScan.class,</span><br><span class="line">        attribute = <span class="string">"basePackageClasses"</span></span><br><span class="line">    )</span><br><span class="line">    Class&lt;?&gt;[] scanBasePackageClasses() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>未完</p>
 
       
     </div>
@@ -423,7 +424,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/Java/" rel="tag"># -Java</a>
           
         </div>
       
@@ -436,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/15/Java中接口和抽象类的区别/" rel="next" title="Java中接口和抽象类的区别">
-                <i class="fa fa-chevron-left"></i> Java中接口和抽象类的区别
+              <a href="/2019/05/03/一文理解ThreadLocal/" rel="next" title="一文理解ThreadLocal">
+                <i class="fa fa-chevron-left"></i> 一文理解ThreadLocal
               </a>
             
           </div>
@@ -446,8 +447,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/16/2019-3-18腾讯一面/" rel="prev" title="2019.3.18腾讯暑期实习招聘提前批一面(挂)">
-                2019.3.18腾讯暑期实习招聘提前批一面(挂) <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/09/牛客网刷题记录2019-5-9/" rel="prev" title="牛客网刷题记录2019.5.9">
+                牛客网刷题记录2019.5.9 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -500,17 +501,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -588,22 +580,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是插入排序"><span class="nav-number">1.</span> <span class="nav-text">什么是插入排序</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
