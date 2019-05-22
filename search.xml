@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[final关键字]]></title>
     <url>%2F2019%2F05%2F22%2Ffinal%E5%85%B3%E9%94%AE%E5%AD%97%2F</url>
-    <content type="text"><![CDATA[final是Java中的关键字，可以修饰变量，方法，类 final 这个关键字的含义是这是无法改变的或者终态的；一旦引用使用final修饰，那么这个引用就不能再改变，否则，编译器将会报编译错误。 ##修饰变量1public static final int TOKEN_EXPIRE = 3600*24 * 2; 这是我在代码中定义过的一个final变量，用final修饰以后，该值不可变，再次对TOKEN_EXPIRE赋值就会报错。如果修饰引用类型，那么该引用不可变，但是引用的对象是可以被改变的 ##修饰类String类是一个被final修饰的类，那么被final修饰的类，不可被继承，如果一个类不希望被继承，可以用final修饰，被final修饰的类中的所有方法都被final修饰，也就是不可被重写 这就是String类不可变的原因。 ##修饰方法final关键字修饰方法说明该方法不可被子类重写 修饰形参该形参在方法中不可被改变 ##好处 final关键字提高了性能。JVM和Java应用都会缓存final变量。 final变量可以安全的在多线程环境下进行共享，而不需要额外的同步开销。 使用final关键字，JVM会对方法、变量及类进行优化。 ##注意按照Java代码惯例，final变量就是常量，而且通常常量名要大写final关键字不同于finally关键字，后者用于异常处理。final关键字容易与finalize()方法搞混，后者是在Object类中定义的方法，是在垃圾回收之前被JVM调用的方法。final关键字即使在定义的时候未被赋值，但是在每个构造器中一定要赋值，如果没有赋值，系统也不会为它赋值，该变量定义出来毫无意义。]]></content>
+    <content type="text"><![CDATA[final是Java中的关键字，可以修饰变量，方法，类 final 这个关键字的含义是这是无法改变的或者终态的；一旦引用使用final修饰，那么这个引用就不能再改变，否则，编译器将会报编译错误。 修饰变量1public static final int TOKEN_EXPIRE = 3600*24 * 2; 这是我在代码中定义过的一个final变量，用final修饰以后，该值不可变，再次对TOKEN_EXPIRE赋值就会报错。如果修饰引用类型，那么该引用不可变，但是引用的对象是可以被改变的 修饰类String类是一个被final修饰的类，那么被final修饰的类，不可被继承，如果一个类不希望被继承，可以用final修饰，被final修饰的类中的所有方法都被final修饰，也就是不可被重写 这就是String类不可变的原因。 修饰方法final关键字修饰方法说明该方法不可被子类重写 修饰形参该形参在方法中不可被改变 好处 final关键字提高了性能。JVM和Java应用都会缓存final变量。 final变量可以安全的在多线程环境下进行共享，而不需要额外的同步开销。 使用final关键字，JVM会对方法、变量及类进行优化。 ##注意按照Java代码惯例，final变量就是常量，而且通常常量名要大写final关键字不同于finally关键字，后者用于异常处理。final关键字容易与finalize()方法搞混，后者是在Object类中定义的方法，是在垃圾回收之前被JVM调用的方法。final关键字即使在定义的时候未被赋值，但是在每个构造器中一定要赋值，如果没有赋值，系统也不会为它赋值，该变量定义出来毫无意义。]]></content>
       <categories>
         <category>Java</category>
       </categories>
