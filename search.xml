@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Springboot自动配置原理]]></title>
+    <url>%2F2019%2F05%2F23%2FSpringboot%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86%2F</url>
+    <content type="text"><![CDATA[三个注解 @SpringBootConfiguration @EnableAutoConfiguration @ComponentScan 其中@SpringBootConfiguration和@ComponentScan都是原来Spring的注解，并不是Springboot新带来的注解只有@EnableAutoConfiguration是新注解，这个注解顾名思义就是开启自动配置的注解总结,@EnableAutoConfiguration作用从classpath中搜索所有META-INF/spring.factories配置文件然后，将其中org.springframework.boot.autoconfigure.EnableAutoConfiguration key对应的配置项加载到spring容器只有spring.boot.enableautoconfiguration为true（默认为true）的时候，才启用自动配置@EnableAutoConfiguration还可以进行排除，排除方式有2中，一是根据class来排除（exclude），二是根据class name（excludeName）来排除其内部实现的关键点有1）ImportSelector 该接口的方法的返回值都会被纳入到spring容器管理中2）SpringFactoriesLoader 该类可以从classpath中搜索所有META-INF/spring.factories配置文件，并读取配置]]></content>
+      <categories>
+        <category>Springboot</category>
+      </categories>
+      <tags>
+        <tag>Springboot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[final关键字]]></title>
     <url>%2F2019%2F05%2F22%2Ffinal%E5%85%B3%E9%94%AE%E5%AD%97%2F</url>
     <content type="text"><![CDATA[final是Java中的关键字，可以修饰变量，方法，类 final 这个关键字的含义是这是无法改变的或者终态的；一旦引用使用final修饰，那么这个引用就不能再改变，否则，编译器将会报编译错误。 修饰变量1public static final int TOKEN_EXPIRE = 3600*24 * 2; 这是我在代码中定义过的一个final变量，用final修饰以后，该值不可变，再次对TOKEN_EXPIRE赋值就会报错。如果修饰引用类型，那么该引用不可变，但是引用的对象是可以被改变的 修饰类String类是一个被final修饰的类，那么被final修饰的类，不可被继承，如果一个类不希望被继承，可以用final修饰，被final修饰的类中的所有方法都被final修饰，也就是不可被重写 这就是String类不可变的原因。 修饰方法final关键字修饰方法说明该方法不可被子类重写 修饰形参该形参在方法中不可被改变 好处 final关键字提高了性能。JVM和Java应用都会缓存final变量。 final变量可以安全的在多线程环境下进行共享，而不需要额外的同步开销。 使用final关键字，JVM会对方法、变量及类进行优化。 ##注意按照Java代码惯例，final变量就是常量，而且通常常量名要大写final关键字不同于finally关键字，后者用于异常处理。final关键字容易与finalize()方法搞混，后者是在Object类中定义的方法，是在垃圾回收之前被JVM调用的方法。final关键字即使在定义的时候未被赋值，但是在每个构造器中一定要赋值，如果没有赋值，系统也不会为它赋值，该变量定义出来毫无意义。]]></content>
@@ -23,14 +34,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Springboot自动配置原理]]></title>
-    <url>%2F2019%2F05%2F05%2FSpringboot%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86%2F</url>
+    <title><![CDATA[Springboot启动流程]]></title>
+    <url>%2F2019%2F05%2F05%2FSpringboot%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[简介 1234567891011121314151617181920212223242526272829303132333435363738@Target(&#123;ElementType.TYPE&#125;)@Retention(RetentionPolicy.RUNTIME)@Documented@Inherited@SpringBootConfiguration@EnableAutoConfiguration@ComponentScan( excludeFilters = &#123;@Filter( type = FilterType.CUSTOM, classes = &#123;TypeExcludeFilter.class&#125;), @Filter( type = FilterType.CUSTOM, classes = &#123;AutoConfigurationExcludeFilter.class&#125;)&#125;)public @interface SpringBootApplication &#123; @AliasFor( annotation = EnableAutoConfiguration.class ) Class&lt;?&gt;[] exclude() default &#123;&#125;; @AliasFor( annotation = EnableAutoConfiguration.class ) String[] excludeName() default &#123;&#125;; @AliasFor( annotation = ComponentScan.class, attribute = "basePackages" ) String[] scanBasePackages() default &#123;&#125;; @AliasFor( annotation = ComponentScan.class, attribute = "basePackageClasses" ) Class&lt;?&gt;[] scanBasePackageClasses() default &#123;&#125;;&#125; 总结SpringBoot启动的时候，不论调用什么方法，都会构造一个SpringApplication的实例，然后调用这个实例的run方法，这样就表示启动SpringBoot。在run方法调用之前，也就是构造SpringApplication的时候会进行初始化的工作，初始化的时候会做以下几件事： 把参数sources设置到SpringApplication属性中，这个sources可以是任何类型的参数。本文的例子中这个sources就是MyApplication的class对象判断是否是web程序，并设置到webEnvironment这个boolean属性中找出所有的初始化器，默认有5个，设置到initializers属性中找出所有的应用程序监听器，默认有9个，设置到listeners属性中找出运行的主类(main class) SpringApplication构造完成之后调用run方法，启动SpringApplication，run方法执行的时候会做以下几件事： 构造一个StopWatch，观察SpringApplication的执行找出所有的SpringApplicationRunListener并封装到SpringApplicationRunListeners中，用于监听run方法的执行。监听的过程中会封装成事件并广播出去让初始化过程中产生的应用程序监听器进行监听构造Spring容器(ApplicationContext)，并返回3.1 创建Spring容器的判断是否是web环境，是的话构造AnnotationConfigEmbeddedWebApplicationContext，否则构造AnnotationConfigApplicationContext3.2 初始化过程中产生的初始化器在这个时候开始工作3.3 Spring容器的刷新(完成bean的解析、各种processor接口的执行、条件注解的解析等等)从Spring容器中找出ApplicationRunner和CommandLineRunner接口的实现类并排序后依次执行]]></content>
       <categories>
-        <category>Java</category>
+        <category>Springboot</category>
       </categories>
       <tags>
-        <tag>-Java</tag>
+        <tag>Springboot</tag>
       </tags>
   </entry>
   <entry>
