@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Springboot自动配置原理]]></title>
     <url>%2F2019%2F05%2F23%2FSpringboot%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86%2F</url>
-    <content type="text"><![CDATA[三个注解 @SpringBootConfiguration @EnableAutoConfiguration @ComponentScan 其中@SpringBootConfiguration和@ComponentScan都是原来Spring的注解，并不是Springboot新带来的注解只有@EnableAutoConfiguration是新注解，这个注解顾名思义就是开启自动配置的注解总结,@EnableAutoConfiguration作用从classpath中搜索所有META-INF/spring.factories配置文件然后，将其中org.springframework.boot.autoconfigure.EnableAutoConfiguration key对应的配置项加载到spring容器只有spring.boot.enableautoconfiguration为true（默认为true）的时候，才启用自动配置@EnableAutoConfiguration还可以进行排除，排除方式有2中，一是根据class来排除（exclude），二是根据class name（excludeName）来排除其内部实现的关键点有1）ImportSelector 该接口的方法的返回值都会被纳入到spring容器管理中2）SpringFactoriesLoader 该类可以从classpath中搜索所有META-INF/spring.factories配置文件，并读取配置]]></content>
+    <content type="text"><![CDATA[三个注解@SpringBootConfiguration @EnableAutoConfiguration @ComponentScan 其中@SpringBootConfiguration和@ComponentScan都是原来Spring的注解，并不是Springboot新带来的注解只有@EnableAutoConfiguration是新注解，这个注解顾名思义就是开启自动配置的注解总结,@EnableAutoConfiguration作用从classpath中搜索所有META-INF/spring.factories配置文件然后，将其中org.springframework.boot.autoconfigure.EnableAutoConfiguration key对应的配置项加载到spring容器只有spring.boot.enableautoconfiguration为true（默认为true）的时候，才启用自动配置@EnableAutoConfiguration还可以进行排除，排除方式有2中，一是根据class来排除（exclude），二是根据class name（excludeName）来排除其内部实现的关键点有1）ImportSelector 该接口的方法的返回值都会被纳入到spring容器管理中2）SpringFactoriesLoader 该类可以从classpath中搜索所有META-INF/spring.factories配置文件，并读取配置]]></content>
       <categories>
         <category>Springboot</category>
       </categories>
