@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Cyx&#39;s blog">
 <meta property="og:description" content="Java异常体系 什么是异常异常是阻止程序正确执行的错误事件，只要在Java语句执行中产生了异常，一个异常对象就会被创建，JRE就会寻找处理程序来处理异常，如果有正确的处理程序，异常就会被处理程序接管，否则将引发运行环境异常，JRE停止运行。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/PPjwP.png">
-<meta property="og:updated_time" content="2019-05-27T04:45:10.659Z">
+<meta property="og:image" content="https://nowcodercyx.oss-cn-beijing.aliyuncs.com/Exception.png">
+<meta property="og:updated_time" content="2019-05-27T04:49:14.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java异常体系">
 <meta name="twitter:description" content="Java异常体系 什么是异常异常是阻止程序正确执行的错误事件，只要在Java语句执行中产生了异常，一个异常对象就会被创建，JRE就会寻找处理程序来处理异常，如果有正确的处理程序，异常就会被处理程序接管，否则将引发运行环境异常，JRE停止运行。">
-<meta name="twitter:image" content="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/PPjwP.png">
+<meta name="twitter:image" content="https://nowcodercyx.oss-cn-beijing.aliyuncs.com/Exception.png">
 
 
 
@@ -407,7 +407,7 @@
       
 
       
-        <p>Java异常体系<br><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/PPjwP.png" alt="Alt text"></p>
+        <h1 id="Java异常体系"><a href="#Java异常体系" class="headerlink" title="Java异常体系"></a>Java异常体系</h1><p><img src="https://nowcodercyx.oss-cn-beijing.aliyuncs.com/Exception.png" alt="Alt text"></p>
 <h2 id="什么是异常"><a href="#什么是异常" class="headerlink" title="什么是异常"></a>什么是异常</h2><p>异常是阻止程序正确执行的错误事件，只要在Java语句执行中产生了异常，一个异常对象就会被创建，JRE就会寻找处理程序来处理异常，如果有<br>正确的处理程序，异常就会被处理程序接管，否则将引发运行环境异常，JRE停止运行。<br><a id="more"></a></p>
 <h2 id="异常处理中的关键字"><a href="#异常处理中的关键字" class="headerlink" title="异常处理中的关键字"></a>异常处理中的关键字</h2><p><strong>throw</strong> 关键字，用来抛出和处理运行时异常<br><strong>throws</strong> 在方法签名中使用throws来告知应用程序此方法可能会抛出的异常<br><strong>try-catch</strong> 代码块 try块中通常是写需要执行的代码，在catch中需要接收一个代表异常类型的参数<br><strong>finally</strong> 有时异常终止了我们的程序，但是还有一些打开的资源尚未关闭，所以我们用finally进行关闭，<br>无论有没有异常发生,finally中的代码总会执行， finally中的return也会覆盖之前的return。</p>
 <h2 id="异常层级"><a href="#异常层级" class="headerlink" title="异常层级"></a>异常层级</h2><p>Throwable有两个子类分别是Exception和Error 其中Exception分为受检查的异常和不受检查的异常<br>Error通常表示编译时和系统异常，通常不能预期，比如JVM崩溃 内存不足</p>
@@ -607,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是异常"><span class="nav-number">1.</span> <span class="nav-text">什么是异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理中的关键字"><span class="nav-number">2.</span> <span class="nav-text">异常处理中的关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常层级"><span class="nav-number">3.</span> <span class="nav-text">异常层级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常的方法"><span class="nav-number">4.</span> <span class="nav-text">异常的方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java异常体系"><span class="nav-number">1.</span> <span class="nav-text">Java异常体系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是异常"><span class="nav-number">1.1.</span> <span class="nav-text">什么是异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理中的关键字"><span class="nav-number">1.2.</span> <span class="nav-text">异常处理中的关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常层级"><span class="nav-number">1.3.</span> <span class="nav-text">异常层级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常的方法"><span class="nav-number">1.4.</span> <span class="nav-text">异常的方法</span></a></li></ol></li></ol></div>
             
 
           </div>
