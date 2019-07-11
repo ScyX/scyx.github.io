@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[String为啥不可变]]></title>
     <url>%2F2019%2F07%2F11%2FString%E4%B8%BA%E5%95%A5%E4%B8%8D%E5%8F%AF%E5%8F%98%2F</url>
-    <content type="text"><![CDATA[经常说String不可变 String到底为啥不可变 先看看Java8中的String源码1234public final class String implements java.io.Serializable, Comparable&lt;String&gt;, CharSequence &#123; /** The value is used for character storage. */ private final char value[]; String类用final修饰，底层使用char数组value存储字符。一个类用final修饰，说明它不可被继承，即没有子类可以继承String类和重写String类的方法，并且char数组用final修饰，一旦初始化，无法引用其他数组， 而且String内部没有修改char数组的方法。因此String不可变。有啥好处 String作为HashMap的key，hash值只需要计算一次。 字符串常量池需要12345public static void main(String[] args)&#123; String a= "abc"; String b= "abc"; System.out.println("a==b:"+(a==b));//true &#125; 如果一个字符串已经被创建过，那么再次创建就会从字符串常量池中取得引用，如果字符串可变，这点不能实现。 安全性网络连接中经常使用String作为连接参数，如果可变的话，改变String的一方认为连接的是其他主机。 线程安全String类不可变所以天生线程安全。]]></content>
+    <content type="text"><![CDATA[经常说String不可变 String到底为啥不可变 先看看Java8中的String源码1234public final class String implements java.io.Serializable, Comparable&lt;String&gt;, CharSequence &#123; /** The value is used for character storage. */ private final char value[]; String类用final修饰，底层使用char数组value存储字符。一个类用final修饰，说明它不可被继承，即没有子类可以继承String类和重写String类的方法，并且char数组用final修饰，一旦初始化，无法引用其他数组，而且String内部没有修改char数组的方法。因此String不可变。 有啥好处 String作为HashMap的key，hash值只需要计算一次。 字符串常量池需要12345public static void main(String[] args)&#123; String a= "abc"; String b= "abc"; System.out.println("a==b:"+(a==b));//true &#125; 如果一个字符串已经被创建过，那么再次创建就会从字符串常量池中取得引用，如果字符串可变，这点不能实现。 安全性网络连接中经常使用String作为连接参数，如果可变的话，改变String的一方认为连接的是其他主机,其实并不是。 线程安全String类不可变所以天生线程安全。]]></content>
       <categories>
         <category>Java</category>
       </categories>
