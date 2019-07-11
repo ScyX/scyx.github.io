@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="Cyx&#39;s blog">
 <meta property="og:description" content="经常说String不可变 String到底为啥不可变">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-11T12:27:41.870Z">
+<meta property="og:image" content="https://scyx.github.io/images/String.png">
+<meta property="og:updated_time" content="2019-07-11T12:28:38.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String为啥不可变">
 <meta name="twitter:description" content="经常说String不可变 String到底为啥不可变">
+<meta name="twitter:image" content="https://scyx.github.io/images/String.png">
 
 
 
@@ -368,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  15字
+                  288字
                 </span>
               
 
@@ -405,21 +407,20 @@
       
 
       
-        <h2 id="经常说String不可变-String到底为啥不可变"><a href="#经常说String不可变-String到底为啥不可变" class="headerlink" title="经常说String不可变 String到底为啥不可变"></a>经常说String不可变 String到底为啥不可变</h2><!-- more -- >
-先看看Java8中的String源码
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span></span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span>, <span class="title">Comparable</span>&lt;<span class="title">String</span>&gt;, <span class="title">CharSequence</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** The value is used for character storage. */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">char</span> value[];</span><br></pre></td></tr></table></figure>
+        <h2 id="经常说String不可变-String到底为啥不可变"><a href="#经常说String不可变-String到底为啥不可变" class="headerlink" title="经常说String不可变 String到底为啥不可变"></a>经常说String不可变 String到底为啥不可变</h2><a id="more"></a>
+<p>先看看Java8中的String源码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span></span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span>, <span class="title">Comparable</span>&lt;<span class="title">String</span>&gt;, <span class="title">CharSequence</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** The value is used for character storage. */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">char</span> value[];</span><br></pre></td></tr></table></figure></p>
 <p>String类用final修饰，底层使用char数组value存储字符。<br>一个类用final修饰，说明它不可被继承，即没有子类可以继承String类和重写String类的方法，并且char数组用final修饰，一旦初始化，无法引用其他数组，</p>
 <h2 id="而且String内部没有修改char数组的方法。因此String不可变。"><a href="#而且String内部没有修改char数组的方法。因此String不可变。" class="headerlink" title="而且String内部没有修改char数组的方法。因此String不可变。"></a>而且String内部没有修改char数组的方法。因此String不可变。</h2><h2 id="有啥好处"><a href="#有啥好处" class="headerlink" title="有啥好处"></a>有啥好处</h2><ol>
 <li>String作为HashMap的key，hash值只需要计算一次。</li>
 <li>字符串常量池需要<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String a= <span class="string">"abc"</span>;</span><br><span class="line">        String b= <span class="string">"abc"</span>;</span><br><span class="line">        System.out.println(<span class="string">"a==b:"</span>+(a==b));<span class="comment">//true</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><img src="/images/String.png" alt=""><br>如果一个字符串已经被创建过，那么再次创建就会从字符串常量池中取得引用，如果字符串可变，这点不能实现。</p>
+<p><img src="/images/String.png" alt><br>如果一个字符串已经被创建过，那么再次创建就会从字符串常量池中取得引用，如果字符串可变，这点不能实现。</p>
 <ol start="3">
 <li>安全性<br>网络连接中经常使用String作为连接参数，如果可变的话，改变String的一方认为连接的是其他主机。</li>
 <li>线程安全<br>String类不可变所以天生线程安全。</li>
 </ol>
--->
+
       
     </div>
     
@@ -607,7 +608,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#经常说String不可变-String到底为啥不可变"><span class="nav-number">1.</span> <span class="nav-text">经常说String不可变 String到底为啥不可变</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#经常说String不可变-String到底为啥不可变"><span class="nav-number">1.</span> <span class="nav-text">经常说String不可变 String到底为啥不可变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#而且String内部没有修改char数组的方法。因此String不可变。"><span class="nav-number">2.</span> <span class="nav-text">而且String内部没有修改char数组的方法。因此String不可变。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有啥好处"><span class="nav-number">3.</span> <span class="nav-text">有啥好处</span></a></li></ol></div>
             
 
           </div>
@@ -641,7 +642,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.5k</span>
+    <span title="Site words total count">7.7k</span>
   
 </div>
 
