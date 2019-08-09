@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="数据库,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="记录点滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cyx&#39;s blog">
-<meta property="og:url" content="https://scyx.github.io/archives/page/2/index.html">
+<meta name="description" content="mysql引擎分类及区别    innodb从mysql5.5开始innodb作为mysql的默认存储引擎，实现了四个隔离级别（读已提交，读未提交，可重复读，可串行化），默认是可重复读，并且用MVCC（多版本并发控制）和间隙锁来防止幻影读。 myisam5.5之前都是myisam作为默认引擎，设计简单，在简单表的效率上要比innodb高，但是不支持事务，也不支持行锁，支持的是表锁，读取时会对需要">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql">
+<meta property="og:url" content="https://scyx.github.io/2019/08/09/mysql/index.html">
 <meta property="og:site_name" content="Cyx&#39;s blog">
-<meta property="og:description" content="记录点滴">
+<meta property="og:description" content="mysql引擎分类及区别    innodb从mysql5.5开始innodb作为mysql的默认存储引擎，实现了四个隔离级别（读已提交，读未提交，可重复读，可串行化），默认是可重复读，并且用MVCC（多版本并发控制）和间隙锁来防止幻影读。 myisam5.5之前都是myisam作为默认引擎，设计简单，在简单表的效率上要比innodb高，但是不支持事务，也不支持行锁，支持的是表锁，读取时会对需要">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-09T05:31:16.428Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cyx&#39;s blog">
-<meta name="twitter:description" content="记录点滴">
+<meta name="twitter:title" content="mysql">
+<meta name="twitter:description" content="mysql引擎分类及区别    innodb从mysql5.5开始innodb作为mysql的默认存储引擎，实现了四个隔离级别（读已提交，读未提交，可重复读，可串行化），默认是可重复读，并且用MVCC（多版本并发控制）和间隙锁来防止幻影读。 myisam5.5之前都是myisam作为默认引擎，设计简单，在简单表的效率上要比innodb高，但是不支持事务，也不支持行锁，支持的是表锁，读取时会对需要">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://scyx.github.io/archives/page/2/">
+  <link rel="canonical" href="https://scyx.github.io/2019/08/09/mysql/">
 
 
 
 
 
-  <title>归档 | Cyx's blog</title>
+  <title>mysql | Cyx's blog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,181 +271,205 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://scyx.github.io/2019/08/09/mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cyx">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cyx's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">mysql</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-09T12:11:12+08:00">
+                2019-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/03/一文理解ThreadLocal/" itemprop="url">
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">一文理解ThreadLocal</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-03T12:53:40+08:00" content="2019-05-03">
-          05-03
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5分
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/02/MySQL索引原理/" itemprop="url">
-              
-                <span itemprop="name">MySQL索引原理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-02T18:44:15+08:00" content="2019-05-02">
-          05-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/16/Java排序算法之插入排序/" itemprop="url">
-              
-                <span itemprop="name">Java排序算法之插入排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-16T10:21:02+08:00" content="2019-04-16">
-          04-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <ol>
+<li>mysql引擎分类及区别 </li>
+</ol>
+<ul>
+<li>innodb<br>从mysql5.5开始innodb作为mysql的默认存储引擎，实现了四个隔离级别（读已提交，读未提交，可重复读，可串行化），默认是可重复读，并且用<br>MVCC（多版本并发控制）和间隙锁来防止幻影读。</li>
+<li>myisam<br>5.5之前都是myisam作为默认引擎，设计简单，在简单表的效率上要比innodb高，但是不支持事务，也不支持行锁，支持的是表锁，读取时会对需要读到的所有表<br>加共享锁，写入时则对表加排它锁。</li>
+<li>区别<br>Innodb支持事务，<br>行级锁，外键，而myisam不支持事务也不支持行级锁，支持的是表级锁，但是myisam相对简单，小型应用可以使用myisam。</li>
+</ul>
+<ol start="2">
+<li>什么是事务<br>事务就是满足A（原子性） C（一致性） I（隔离性） D（持久性）的一组操作<br>原子性：要么全部执行，要么全部不执行<br>一致性：事务执行前后保持一致性状态，所有事务读取数据一样<br>隔离性：事务未提交，别的事务不可见<br>持久性：事务提交以后，修改会保存到数据库</li>
+<li>事务隔离级别</li>
+</ol>
+<ul>
+<li>读未提交 事务可以看到其他事务修改了而未提交的数据 造成的结果就是脏读</li>
+<li>读已提交 事务只能看到其他事务提交之后的数据   造成结果就是不可重复读</li>
+<li>可重复读 在一个事务中多次读取到的数据是一样的 可能造成幻影读MySQL默认的隔离级别就是可重复读</li>
+<li>可串行化 事务串行执行</li>
+</ul>
+<ol start="4">
+<li>脏读，幻读，不可重复读，丢失修改<br>在并发环境下，事务的隔离性很难保证，可能会出现并发一致性问题<br>丢失修改，两个事务同时进行，一个事务先修改一个数据，另一个事务后修改这个数据，前一个事务的修改被覆盖了。<br>脏读，T1先修改，再撤销，T2在这两个操作之间读数据，读的就是脏数据<br>不可重复读，T2先读一个数据，然后T1修改了这个数据，T2再读这个数据，前后两次读的数据不一样<br>幻读，T1读取某个范围的数据，T2在这个范围中插入了一条数据，T1再次读取这个范围的数据，读取的数据和第一次并不一样</li>
+<li>排它锁和共享锁<br>一个事务对数据对象A加了排它锁，其他事务不能对A加任何锁<br>一个事务对数据对象A加了共享锁，其他事务可以读A，给A加共享锁，但是不能给A加排它锁</li>
+<li>MVCC多版本并发控制<br>MVCC是Mysql用来实现可重复读和已提交读的一种手段。未提交读总是读取最新的行，可串行化需要对所有用到的行加锁，所以这两种并不需要MVCC。</li>
+</ol>
+<ul>
+<li><strong>版本号</strong><br>系统版本号 一个递增的数字 每开始一个新的事务，系统版本号就会递增<br>事务版本号 事务开始的系统版本号</li>
+<li><strong>隐藏的列</strong><br>在每行数据后面都有两个隐藏的列<br>创建版本号：一个数据行快照创建时的系统版本号<br>删除版本号：如果删除版本号大于当前的事务版本号则快照有效，否则该快照已经被删除<br>mysql通过undo日志保存快照，该日志通过回滚指针把一个数据行（Record）的所有快照连接起来。<br>一个事务开始时的版本号要大于所有数据行的版本号，<h3 id="Select"><a href="#Select" class="headerlink" title="Select"></a><strong>Select</strong></h3>事务T读取的数据快照的创建版本号必须是小于等于T的版本号，如果大于等于T，就说明是其他事务修改过的，不能读取<br>删除版本号一定是大于等于T的版本号，如果小于等于T就说明已经被删除<h3 id="insert"><a href="#insert" class="headerlink" title="insert"></a><strong>insert</strong></h3>插入数据的创建版本号就是当前的系统版本号<h3 id="delete"><a href="#delete" class="headerlink" title="delete"></a><strong>delete</strong></h3>删除版本号为当前系统版本号<h3 id="update"><a href="#update" class="headerlink" title="update"></a><strong>update</strong></h3>将当前系统版本号作为更新前的数据行快照的删除版本号，并将当前系统版本号作为更新后的数据行快照的创建版本号。<br>可以理解为先执行 DELETE 后执行 INSERT。<br>间隙锁+mvcc实现可重复读<h3 id="Record-Locks"><a href="#Record-Locks" class="headerlink" title="Record Locks"></a>Record Locks</h3>锁定一个记录上的索引，而不是记录本身。<br>如果表没有设置索引，InnoDB 会自动在主键上创建隐藏的聚簇索引，因此 Record Locks 依然可以使用。<h3 id="Gap-Locks"><a href="#Gap-Locks" class="headerlink" title="Gap Locks"></a>Gap Locks</h3>锁定索引之间的间隙，但是不包含索引本身。例如当一个事务执行以下语句，其它事务就不能在 t.c 中插入 15。<br>SELECT c FROM t WHERE c BETWEEN 10 and 20 FOR UPDATE;<h3 id="Next-Key-Locks"><a href="#Next-Key-Locks" class="headerlink" title="Next-Key Locks"></a>Next-Key Locks</h3>Next-Key Locks 是 MySQL 的 InnoDB 存储引擎的一种锁实现。</li>
+</ul>
+<p>MVCC 不能解决幻影读问题，Next-Key Locks 就是为了解决这个问题而存在的。在可重复读（REPEATABLE READ）隔离级别下，使用 MVCC + Next-Key Locks 可以解决幻读问题。<br>它是 Record Locks 和 Gap Locks 的结合，不仅锁定一个记录上的索引，也锁定索引之间的间隙。例如一个索引包含以下值：10, 11, 13, and 20，那么就需要锁定以下区间：<br>(-∞, 10]<br>(10, 11]<br>(11, 13]<br>(13, 20]<br>(20, +∞)<br>本文只是是看了CYC大佬的博客，自己做的一波总结，并不是原创<br>CS-NOTES连接:<a href="https://cyc2018.github.io/CS-Notes/#/" target="_blank" rel="noopener">cs-notes</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/15/Java中接口和抽象类的区别/" itemprop="url">
-              
-                <span itemprop="name">Java中接口和抽象类的区别</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-15T11:11:02+08:00" content="2019-04-15">
-          04-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/06/总结练习/" rel="next" title="总结练习">
+                <i class="fa fa-chevron-left"></i> 总结练习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -451,6 +477,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -471,8 +501,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -550,6 +589,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Select"><span class="nav-number">1.</span> <span class="nav-text">Select</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insert"><span class="nav-number">2.</span> <span class="nav-text">insert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete"><span class="nav-number">3.</span> <span class="nav-text">delete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update"><span class="nav-number">4.</span> <span class="nav-text">update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Record-Locks"><span class="nav-number">5.</span> <span class="nav-text">Record Locks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gap-Locks"><span class="nav-number">6.</span> <span class="nav-text">Gap Locks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Next-Key-Locks"><span class="nav-number">7.</span> <span class="nav-text">Next-Key Locks</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -699,6 +754,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
